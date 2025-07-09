@@ -160,12 +160,14 @@ body {
     font-weight: 700;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .hero p {
     font-size: 1.3rem;
     margin: 0 auto 24px auto;
     max-width: 600px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+.hero h1, .hero p {
+  color: #007b43;
 }
 
 .hero .cta-btn {
@@ -1101,12 +1103,19 @@ section h2:after {
   width: 40px;
   height: 40px;
 }
-.activity-card img.icon-sm,
-.news-card img.icon-sm {
+.activity-card img.icon-sm {
+  width: 40px;
+  height: 40px;
+  max-width: 100%;
+  max-height: 40px;
   border-radius: 0;
   border: none;
   box-shadow: none;
   background: none;
+  display: block;
+  margin: 0 auto 12px auto;
+  object-fit: contain;
+  filter: none;
 }
 
 /* Button style */
