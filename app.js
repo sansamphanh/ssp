@@ -284,6 +284,24 @@ aboutRadios.forEach(radio => {
   });
 });
 
+// Hide About Us by default
+var aboutSection = document.getElementById('about');
+if (aboutSection) aboutSection.classList.remove('show-about');
+
+// Show About Us when About menu is clicked
+var aboutMenu = document.querySelector('a[href="#about"]');
+if (aboutMenu && aboutSection) {
+  aboutMenu.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Hide all sections except About
+    document.querySelectorAll('section').forEach(function(sec) {
+      if (sec !== aboutSection) sec.style.display = '';
+    });
+    aboutSection.classList.add('show-about');
+    aboutSection.scrollIntoView({behavior: 'smooth'});
+  });
+}
+
 // Join Us Popup logic
 const joinUsBtns = document.querySelectorAll('.cta-btn');
 const joinUsPopup = document.getElementById('joinUsPopup');
